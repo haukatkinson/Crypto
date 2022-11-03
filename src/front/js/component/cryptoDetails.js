@@ -21,7 +21,7 @@ const CryptoDetails = ({
           <p className="coin-price">${price}</p>
           <p className="coin-volume">${volume}</p>
 
-          {price < 0 ? (
+          {percent < 0 ? (
             <p className="coin-percent red">{percent.toFixed(2)}%</p>
           ) : (
             <p className="coin-percent green">{percent.toFixed(2)}%</p>

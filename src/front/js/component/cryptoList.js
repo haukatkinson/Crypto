@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import background from "./cryptoback.jpg";
 
 import { CryptoDetails } from "./cryptoDetails";
 
@@ -23,31 +24,41 @@ const CryptoList = () => {
 
   return (
     <div className="coin-app">
-      <div className="coin-search">
-        <h1 className="coin-text">Search a currency</h1>
-        <form>
-          <input
-            className="coin-input"
-            type="text"
-            onChange={handleChange}
-            placeholder="Search"
-          />
-        </form>
+      <div
+        className="p-5 text-center bg-image rounded-3"
+        style={{
+          backgroundImage: "url('cryptoback.jpg')",
+          backgroundSize: "cover",
+          height: "105%",
+          width: "100%",
+        }}
+      >
+        <div className="coin-search">
+          <h1 className="coin-text">Search a currency</h1>
+          <form>
+            <input
+              className="coin-input"
+              type="text"
+              onChange={handleChange}
+              placeholder="Search"
+            />
+          </form>
+        </div>
+        {filteredCoins.map((basic, idx) => {
+          return (
+            <CryptoDetails
+              key={basic.id}
+              name={basic.name}
+              price={basic.current_price}
+              symbol={basic.symbol}
+              cap={basic.total_volume}
+              volume={basic.market_cap}
+              image={basic.image}
+              percent={basic.price_change_percentage_24h}
+            />
+          );
+        })}
       </div>
-      {filteredCoins.map((basic, idx) => {
-        return (
-          <CryptoDetails
-            key={basic.id}
-            name={basic.name}
-            price={basic.current_price}
-            symbol={basic.symbol}
-            cap={basic.total_volume}
-            volume={basic.market_cap}
-            image={basic.image}
-            percent={basic.price_change_percentage_24h}
-          />
-        );
-      })}
     </div>
   );
 };
