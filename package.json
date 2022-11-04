@@ -1,5 +1,4 @@
 {
-  "homepage": "http://haukatkinson.github.io/Crypto",
   "name": "react-hello-webapp",
   "engines": {
     "node": "16.x"
@@ -9,8 +8,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --port 3000",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "webpack --config webpack.prod.js"
   },
   "author": {
@@ -41,7 +38,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bc-console": "0.0.2",
     "css-loader": "^6.5.1",
-    "dotenv-webpack": "^7.0.3",
+    "dotenv-webpack": "^7.1.1",
     "envfile": "^6.17.0",
     "error-overlay-webpack-plugin": "^1.0.0",
     "eslint": "^8.4.0",
