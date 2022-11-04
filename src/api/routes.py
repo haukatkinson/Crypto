@@ -4,6 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
+import requests
 
 api = Blueprint('api', __name__)
 
@@ -20,7 +21,7 @@ def handle_hello():
 @api.route('/crypto', methods=['GET'])
 def forward_resp():
     resp = requests.get(
-        'hhttps://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false'
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false'
     ).json()
     
     return jsonify(crypto = resp)
