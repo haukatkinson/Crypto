@@ -1,5 +1,5 @@
 {
-	"homepage": "https://haukatkinson.github.io/Crypto",
+  "homepage": "https://haukatkinson.github.io/Crypto",
   "name": "react-hello-webapp",
   "engines": {
     "node": "16.x"
@@ -9,8 +9,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --port 3000",
-	"predeploy": "npm run build",
-	"deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --config webpack.prod.js"
   },
   "author": {
